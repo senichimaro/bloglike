@@ -4,9 +4,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// Redux Components Configs
+import { Provider } from 'react-redux'
+import userStore from './Redux/Stores/UserStore'
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={userStore}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

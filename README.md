@@ -1,70 +1,165 @@
-# Getting Started with Create React App
+# Blog App
+This web application build a "Blog like" functionality that use axios to get Posts data from an API (gnews) to be rendered in Material UI components and Styles. Implement Google Authentication from a React library and handle this data with Redux.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+It's a Single Page Application that works with boolean interpreters to render components and data.
 
-## Available Scripts
 
-In the project directory, you can run:
+## Redux
 
-### `npm start`
+#### Steps
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. Set a State
+  1. Slice : create state object (two properties)
+    - name : state associate name (string)
+    - initialState : state (the state object)
+    - reducers : state setters (functions object)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+  2. Exports
+    - export setters from slice.actions
+    - export getters from state
+    - export default slice.reducers
 
-### `npm test`
+2. Store Configuration
+  - import reducer data
+  - configure store
+  - name asignation
+    * link the slice by a name into reducer object
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. Wrapping target Components
+  - import Provider from react-redux
+  - import the store
+  - wrapp target component with Provider
+  - pass to Provider the store like "store" prop
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Google Login
+This library needs a Google OAuth credential that can be taken from developers console. It creates a button interface with some props and callbacks. Show a Google Authentication popup and resceives a response with user data, tokens, etc.
+~~~
+// test function
+const responseGoogle = response => {
+  console.log("login response", response);
+}
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<GoogleLogin
+  clientId={ process.env.REACT_APP_GOOGLE_OAUTH }
+  render={ renderProps => (
+    <button onClick={renderProps.onClick}>Google Login</button>
+  ) }
+  buttonText='Login'
+  onSuccess={responseGoogle}
+  onFailure={responseGoogle}
+  cookiePolicy={'single_host_origin'}
+/>
+~~~
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Packages
+* [Redux : redux tollkit & react redux](#redux)
+* [React Google Login](#react-google-login)
+* [Material UI : core & icons](#material-ui)
+* [Axios](#axios)
 
-## Learn More
+### Redux
+~~~
+npm i @reduxjs/toolkit react-redux
+~~~
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### React Google Login
+~~~
+npm i react-google-login
+~~~
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Material UI
+~~~
+npm i @material-ui/core @material-ui/icons
+~~~
 
-### Code Splitting
+### Axios
+~~~
+npm i axios
+~~~
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
