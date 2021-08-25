@@ -1,5 +1,6 @@
 # Blog App
-This web application build a "Blog like" functionality that use axios to get Posts data from an API (gnews) to be rendered in Material UI components and Styles. Implement Google Authentication from a React library and handle this data with Redux.
+This web application build a ["Blog like"]() 
+functionality that use axios to get Posts data from an API (gnews) to be rendered in Material UI components and Styles. Implement Google Authentication from a React library and handle this data with Redux.
 
 It's a Single Page Application that works with boolean interpreters to render components and data.
 
