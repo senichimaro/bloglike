@@ -31,7 +31,7 @@ const LoginButton = ({ variant , color }) => {
 
   return (
     <GoogleLogin
-      clientId={ process.env.REACT_APP_GOOGLE_OAUTH }
+      clientId={ process.env.REACT_APP_GOOGLE_OAUTH || process.env.GOOGLE_OAUTH }
       render={ renderProps => (
         <Button variant={variant ? variant : 'text' } color={color ? color : 'inherit'} onClick={renderProps.onClick}>Login</Button>
       ) }

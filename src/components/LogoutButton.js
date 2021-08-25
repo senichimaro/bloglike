@@ -23,7 +23,7 @@ const LogoutButton = () => {
 
   return (
     <GoogleLogout
-      clientId={ process.env.REACT_APP_GOOGLE_OAUTH }
+      clientId={ process.env.REACT_APP_GOOGLE_OAUTH || process.env.GOOGLE_OAUTH }
       render={ renderProps => (
         <Button color='inherit' onClick={renderProps.onClick}>Logout</Button>
       ) }

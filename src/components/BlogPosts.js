@@ -61,7 +61,7 @@ const BlogPosts = () => {
 
   /** URL API
   */
-  const urlAPI = `https://gnews.io/api/v4/search?q=${ searchInput }&token=${ process.env.REACT_APP_GNEWS_TOKEN }&lang=en`
+  const urlAPI = `https://gnews.io/api/v4/search?q=${ searchInput }&token=${ process.env.REACT_APP_GNEWS_TOKEN || process.env.GNEWS_TOKEN }&lang=en`
 
   useEffect(() => {
     axios
