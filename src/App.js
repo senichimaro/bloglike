@@ -27,11 +27,11 @@ function App() {
 
 
   return (
-    <div className="App">
+    <div>
       <Navbar />
       {
         isSignedIn
-        ? <BlogPosts />
+        ? <BlogPosts className="App" />
         : <Home />
       }
     </div>

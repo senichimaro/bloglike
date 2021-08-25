@@ -21,7 +21,6 @@ import {
 
 import {
   selectSearchInput,
-  setUserData,
   setBlogData
 } from '../Redux/Reducers/User'
 

@@ -13,7 +13,6 @@ import CardActions from '@material-ui/core/CardActions';
 import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import { red } from '@material-ui/core/colors';
 
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
@@ -79,8 +78,8 @@ export default function CardComponent({ posts }) {
                   <CardContent>
                     <Typography variant="body2" color="textSecondary" component="p">
                     {
-                      items.description .length > 150
-                      ? `${items.description .substring(0,150)}...`
+                      items.description.length > 150
+                      ? `${items.description.substring(0,150)}...`
                       : items.description
                     }
                     </Typography>
