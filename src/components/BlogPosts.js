@@ -21,7 +21,8 @@ import {
 
 import {
   selectSearchInput,
-  setUserData
+  setUserData,
+  setBlogData
 } from '../Redux/Reducers/User'
 
 
@@ -68,13 +69,13 @@ const BlogPosts = () => {
     .get(urlAPI)
     .then( res => {
       // console.log("res",res);
-      setPosts( res.data )
-      dispatch( setUserData( res.data ) )
+      setPosts( res.data );
+      dispatch( setBlogData( res.data ) );
     })
     .catch( error => {
       // console.error(`ERROR at BlogPosts useEffect: ${error.message}`);
     })
-  },[ searchInput ])
+  },[ searchInput , dispatch , urlAPI ])
 
   return (
     <Container maxWidth='lg' style={{paddingTop:20}}>

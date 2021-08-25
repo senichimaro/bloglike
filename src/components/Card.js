@@ -38,7 +38,8 @@ const useStyles = makeStyles((theme) => ({
     transform: 'rotate(180deg)',
   },
   avatar: {
-    backgroundColor: red[500],
+    // backgroundColor: red[500],
+    display:'none'
   },
 }));
 
@@ -61,7 +62,11 @@ export default function CardComponent({ posts }) {
                         R
                       </Avatar>
                     }
-                    title={items.title}
+                    title={
+                      items.title.length > 70
+                      ? `${items.title.substring(0,70)}...`
+                      : items.title
+                    }
                     subheader={ new Date(items.publishedAt).toDateString() }
                   />
 
@@ -72,7 +77,13 @@ export default function CardComponent({ posts }) {
                   />
 
                   <CardContent>
-                    <Typography variant="body2" color="textSecondary" component="p">{ items.description }</Typography>
+                    <Typography variant="body2" color="textSecondary" component="p">
+                    {
+                      items.description .length > 150
+                      ? `${items.description .substring(0,150)}...`
+                      : items.description
+                    }
+                    </Typography>
                   </CardContent>
 
                   <CardActions disableSpacing>

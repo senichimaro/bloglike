@@ -136,7 +136,7 @@ const Navbar = () => {
           {/** Brand
           */}
           <Typography className={classes.title} variant="h6" noWrap>
-            Blog Like
+            { isSignedIn && userData?.givenName }
           </Typography>
 
           {/** Search Input

@@ -9,9 +9,11 @@ import { Provider } from 'react-redux'
 import userStore from './Redux/Stores/UserStore'
 
 ReactDOM.render(
-  <Provider store={userStore}>
-    <App />
-  </Provider>,
+  <React.StrictMode>
+    <Provider store={userStore}>
+      <App />
+    </Provider>
+  </React.StrictMode>,
   document.getElementById('root')
 );
 
